@@ -1,5 +1,7 @@
 import UsersModel from '../models/UsersModel';
 import { Request, Response, NextFunction } from 'express';
+import { encrypt, verify } from '../utils/passwordHandler';
+import { generateToken } from '../utils/jwtHandler';
 
 const UsersController = {
 
@@ -38,7 +40,9 @@ const UsersController = {
                 res.status(400).json({ message: 'Please enter the user information' });
                 return;
             }
-            //const password_encrypted:string= await encrypt(password);
+            const password_encrypted:string= await encrypt(password);
+            req.body.password = password_encrypted;
+
             await UsersModel.createUser( req.body);
             res.status(201).json({ message: 'User created correctly!' });
             return;
@@ -57,7 +61,7 @@ const UsersController = {
                 res.status(400).json({ message: 'Please enter all user information' });
                 return;
             }
-            //const password_encrypted:string= await encrypt(password);
+            const password_encrypted:string= await encrypt(password);
             await UsersModel.updateUser(id, req.body);
             res.status(200).json({ message: 'User up to date!' });
             return;
@@ -75,9 +79,52 @@ const UsersController = {
             res.status(200).json({ message: 'User successfully deleted' });
         } catch (error) {
             console.log(error);
-            res.status(500).json({ message: 'There was an error deleting the user' });
+            res.status(500).json({ message: 'There was an error deleting the user: ' + error });
         }
     },
+
+    // ********** Inicio de sesión ************
+
+    login: async (req: Request, res: Response) => {
+        try {
+            const { email, password } = req.body;
+            const user: any = await UsersModel.getUserByEmail(email);
+
+            if (!user) {
+                res.status(404).json({ message: 'User Not Found' });
+                return;
+            }
+
+            const userFound: any = user;
+            console.log("User Found: " + JSON.stringify(userFound));
+
+            const isValid = await verify(String(password), String(userFound.password));
+
+            if(isValid) {  
+                const token = await generateToken(String(userFound.id));
+                const email = userFound.email;
+                const userId = userFound.id;
+
+                const data = {
+                    token,
+                    userId,
+                    email                
+                };
+                // Si la autenticación es exitosa, envía respuesta con (token, ID y nombre de usuario) en formato JSON
+                res.status(200).json({ 
+                    message: 'User Logged in',
+                    data: data                   
+                });
+                return;
+            }
+            
+            res.status(401).json({ message: 'Logged in error' });
+            return;          
+        } catch (error) {
+            console.log(error);
+            res.status(500).json({ message: 'Error when logged in' });
+        }
+    },    
 };
 
 export default UsersController;
