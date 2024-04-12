@@ -3,6 +3,7 @@ import cors from "cors";
 import { config } from "dotenv"
 import UsersRouter from "./routes/UsersRouter";
 import DepartmentsRouter from "./routes/DepartmentsRouter";
+import AreasRouter from "./routes/AreasRouter";
 
 config();
 
@@ -21,9 +22,15 @@ app.get("/", (req, res) => {
     res.send("Hello World!... Let's start with Criteria");
 });
 
+
+// *******   RUTAS  *********
+
 app.use("/users/", UsersRouter);
 
 app.use("/departments/", DepartmentsRouter);
+
+app.use("/areas/", AreasRouter);
+
 
 app.listen(port, () => {
     console.log("Example app listening on port " + port);
