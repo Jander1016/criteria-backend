@@ -4,6 +4,7 @@ import { config } from "dotenv"
 import UsersRouter from "./routes/UsersRouter";
 import DepartmentsRouter from "./routes/DepartmentsRouter";
 import AreasRouter from "./routes/AreasRouter";
+import TypesAnswersRouter from "./routes/TypesAnswersRouter";
 
 config();
 
@@ -30,6 +31,8 @@ app.use("/users/", UsersRouter);
 app.use("/departments/", DepartmentsRouter);
 
 app.use("/areas/", AreasRouter);
+
+app.use("/types_answers/", TypesAnswersRouter);
 
 
 app.listen(port, () => {
