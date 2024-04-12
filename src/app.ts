@@ -2,6 +2,7 @@ import express  from "express";
 import cors from "cors";
 import { config } from "dotenv"
 import UsersRouter from "./routes/UsersRouter";
+import DepartmentsRouter from "./routes/DepartmentsRouter";
 
 config();
 
@@ -21,6 +22,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/users/", UsersRouter);
+
+app.use("/departments/", DepartmentsRouter);
 
 app.listen(port, () => {
     console.log("Example app listening on port " + port);
