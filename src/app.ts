@@ -5,6 +5,7 @@ import UsersRouter from "./routes/UsersRouter";
 import DepartmentsRouter from "./routes/DepartmentsRouter";
 import AreasRouter from "./routes/AreasRouter";
 import TypesAnswersRouter from "./routes/TypesAnswersRouter";
+import SurveysRouter from "./routes/SurveysRouter";
 
 config();
 
@@ -33,6 +34,10 @@ app.use("/departments/", DepartmentsRouter);
 app.use("/areas/", AreasRouter);
 
 app.use("/types_answers/", TypesAnswersRouter);
+
+app.use("/surveys/", SurveysRouter);
+
+// *******  *********
 
 
 app.listen(port, () => {
