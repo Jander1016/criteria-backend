@@ -57,6 +57,7 @@ model surveys {
   deadline    DateTime?   @db.Timestamp(6)
   active      Boolean
   user_id     String      @db.Uuid
+  name        String?     @db.VarChar(200)
   questions   questions[]
   results     results[]
   users       users       @relation(fields: [user_id], references: [id], onDelete: Cascade)
