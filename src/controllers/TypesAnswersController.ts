@@ -14,7 +14,7 @@ const TypesAnswersController = {
         }
     },
 
-    // Función para OBTENER area por ID
+    // Función para OBTENER tipo de encuesta por ID
     getTypeAnswer: async (req: Request, res: Response) => {
         try {
             const id = req.params.id;
@@ -30,7 +30,7 @@ const TypesAnswersController = {
         }
     },
 
-    // Función para agregar un nuevo area   
+    // Función para agregar un nuevo tipo de encuesta   
     addTypeAnswer: async (req: Request, res: Response) => {
         try {
             const { type, description } = req.body;
@@ -48,7 +48,7 @@ const TypesAnswersController = {
         }
     },
 
-    // Función para ACTUALIZAR un area
+    // Función para ACTUALIZAR un tipo de encuesta
     updateTypeAnswer: async (req: Request, res: Response) => {
         try {
             const id = req.params.id;
@@ -67,7 +67,7 @@ const TypesAnswersController = {
         }
     },
 
-    // Función para ELIMINAR area
+    // Función para ELIMINAR tipo de encuesta
     deleteTypeAnswer: async (req: Request, res: Response) => {
         try {
             const id = req.params.id;
@@ -78,6 +78,20 @@ const TypesAnswersController = {
             res.status(500).json({ message: 'There was an error deleting the TypesAnswer: ' + error });
         }
     },
+
+    // Función para ELIMINAR LOGICO un tipo de encuesta
+    deleteLogicTypeAnswer: async (req: Request, res: Response) => {
+        try {
+            const id = req.params.id;
+            await TypesAnswersModel.deleteLogicTypeAnswer(id);
+            res.status(200).json({ message: 'Survey deleted logic successfully!' });
+            return;
+
+        } catch (error) {
+            console.log(error);
+            res.status(500).json({ message: 'An error occurred: ' + error });
+        }
+    }
 };
 
 export default TypesAnswersController;

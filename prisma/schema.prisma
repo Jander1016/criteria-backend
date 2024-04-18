@@ -22,13 +22,15 @@ model areas {
   id          String      @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
   name        String      @db.VarChar(100)
   description String      @db.VarChar(500)
+  active      Boolean?    @default(true)
   questions   questions[]
 }
 
 model departments {
-  id    String  @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
-  name  String  @db.VarChar(100)
-  users users[]
+  id     String   @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  name   String   @db.VarChar(100)
+  active Boolean? @default(true)
+  users  users[]
 }
 
 model questions {
@@ -67,6 +69,7 @@ model types_answers {
   id          String    @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
   type        String    @db.VarChar(100)
   description String    @db.VarChar(500)
+  active      Boolean?  @default(true)
   answers     answers[]
 }
 
@@ -77,7 +80,7 @@ model users {
   name          String      @db.VarChar(200)
   job_title     String      @db.VarChar(100)
   role          Boolean
-  active        Boolean
+  active        Boolean     @default(true)
   department_id String      @db.Uuid
   surveys       surveys[]
   departments   departments @relation(fields: [department_id], references: [id], onDelete: Cascade)
