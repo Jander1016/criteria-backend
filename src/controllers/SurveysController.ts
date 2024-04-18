@@ -33,8 +33,8 @@ const SurveysController = {
     // Función para agregar un nueva encuesta   
     addSurvey: async (req: Request, res: Response) => {
         try {
-            const {description, deadline, active, user_id, name } = req.body;
-            if (!description || !deadline || (active === undefined) || !user_id || !name) {
+            const {description, deadline, user_id, name } = req.body;
+            if (!description || !deadline || !user_id || !name) {
                 res.status(400).json({ message: 'Please enter the survey information' });
                 return;
             }
@@ -58,8 +58,8 @@ const SurveysController = {
     updateSurvey: async (req: Request, res: Response) => {
         try {
             const id = req.params.id;
-            const {description, deadline, active, user_id, name } = req.body;
-            if (!description || !deadline || (active === undefined) || !user_id || !name) {
+            const {description, deadline, user_id, name } = req.body;
+            if (!description || !deadline || !user_id || !name) {
                 res.status(400).json({ message: 'Please enter all survey information' });
                 return;
             }

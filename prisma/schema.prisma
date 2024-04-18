@@ -55,7 +55,7 @@ model surveys {
   description String      @db.VarChar(500)
   create_date DateTime?   @default(now()) @db.Timestamp(6)
   deadline    DateTime?   @db.Timestamp(6)
-  active      Boolean
+  active      Boolean     @default(true)
   user_id     String      @db.Uuid
   name        String?     @db.VarChar(200)
   questions   questions[]
