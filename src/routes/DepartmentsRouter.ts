@@ -8,5 +8,6 @@ DepartmentsRouter.route("/:id").get(DepartmentsController.getDepartment);
 DepartmentsRouter.route("/").post(DepartmentsController.addDepartment);
 DepartmentsRouter.route("/:id").put(DepartmentsController.updateDepartment);
 DepartmentsRouter.route("/:id").delete(DepartmentsController.deleteDepartment);
+DepartmentsRouter.route("/active/:id").delete(DepartmentsController.deleteLogicDepartment)
 
 export default DepartmentsRouter;

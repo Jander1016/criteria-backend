@@ -42,6 +42,17 @@ const AreasModel = {
         });
         return result;
     },
+
+    //ELIMINADOR LOGICO Area
+    deleteLogicArea:  async (id: string) => {
+        const result = connectionPrisma.areas.update({
+            where: { id: id },
+            data: {
+                active: false // Cambiar el valor de active a false
+            }
+        });
+        return result;
+    },
 };
 
 export default AreasModel;
