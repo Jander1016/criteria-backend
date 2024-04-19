@@ -11,7 +11,9 @@ import UsersSurveysRouter from "./routes/UsersSurveysRouter";
 config();
 
 const app = express();
-const { APP_PORT, URL_FRONTEND } = process.env
+const router = express.Router();
+
+const { APP_PORT, URL_FRONTEND, API_URL  } = process.env
 
 const port = APP_PORT ?? 3200;
 app.use(express.json());
@@ -28,17 +30,19 @@ app.get("/", (req, res) => {
 
 // *******   RUTAS  *********
 
-app.use("/users/", UsersRouter);
+router.use("/users/", UsersRouter);
 
-app.use("/departments/", DepartmentsRouter);
+router.use("/departments/", DepartmentsRouter);
 
-app.use("/areas/", AreasRouter);
+router.use("/areas/", AreasRouter);
 
-app.use("/types_answers/", TypesAnswersRouter);
+router.use("/types_answers/", TypesAnswersRouter);
 
-app.use("/surveys/", SurveysRouter);
+router.use("/surveys/", SurveysRouter);
 
-app.use("/users_surveys/", UsersSurveysRouter);
+router.use("/users_surveys/", UsersSurveysRouter);
+
+app.use(API_URL || '', router);
 
 // *******  *********
 
