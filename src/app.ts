@@ -6,6 +6,7 @@ import DepartmentsRouter from "./routes/DepartmentsRouter";
 import AreasRouter from "./routes/AreasRouter";
 import TypesAnswersRouter from "./routes/TypesAnswersRouter";
 import SurveysRouter from "./routes/SurveysRouter";
+import UsersSurveysRouter from "./routes/UsersSurveysRouter";
 
 config();
 
@@ -36,6 +37,8 @@ app.use("/areas/", AreasRouter);
 app.use("/types_answers/", TypesAnswersRouter);
 
 app.use("/surveys/", SurveysRouter);
+
+app.use("/users_surveys/", UsersSurveysRouter);
 
 // *******  *********
 

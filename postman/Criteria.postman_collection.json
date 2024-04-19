@@ -1,0 +1,962 @@
+{
+	"info": {
+		"_postman_id": "1e74e64f-e50e-4368-bed7-c1d64358c3d0",
+		"name": "Criteria",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28583529",
+		"_collection_link": "https://planetary-escape-657335.postman.co/workspace/My-Workspace~bfffbb5c-e43f-47d2-8380-2f612b4b1e82/collection/28583529-1e74e64f-e50e-4368-bed7-c1d64358c3d0?action=share&source=collection_link&creator=28583529"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/ea5c8917-285e-4c67-92a1-4b7954dfd305",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"ea5c8917-285e-4c67-92a1-4b7954dfd305"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"pepe@hotmail.com\",\r\n    \"password\": \"pepe123\",\r\n    \"name\": \"pepito\",\r\n    \"job_title\": \"scrum\",\r\n    \"role\": false,\r\n    \"active\": false,\r\n    \"department_id\": \"a8b7b1fd-ac08-4305-895f-03cbf9f77aa7\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/ea5c8917-285e-4c67-92a1-4b7954dfd305",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"ea5c8917-285e-4c67-92a1-4b7954dfd305"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "isEvaluator",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"wisman@hotmail.com\",\r\n    \"password\": \"123\",\r\n    \"name\": \"wisman perez\",\r\n    \"job_title\": \"scrum\",\r\n    \"role\": false,\r\n    \"active\": false,\r\n    \"department_id\": \"a8b7b1fd-ac08-4305-895f-03cbf9f77aa7\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY1ZjQ2Y2I3LTE5YjUtNDg2OC1iYjAwLWUyMWEyMjMxZGZlMSIsImlhdCI6MTcxMjg1MDU2NCwiZXhwIjoxNzEyODU0MTY0fQ.1PvnU4F5QK8KPgc8tox7MYF-Qt1xXwSO5sQVq7qf4k8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/users/2f71e2fa-0bac-4c6f-a93f-adafcc7ad2d6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"2f71e2fa-0bac-4c6f-a93f-adafcc7ad2d6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "surveys",
+			"item": [
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/surveys",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"surveys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/surveys/3d9736f5-bde9-41b2-b128-f0e836012ef1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"surveys",
+								"3d9736f5-bde9-41b2-b128-f0e836012ef1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"33 se mide en desempeño\",\r\n    \"deadline\": \"2024-03-15T00:00:00Z\",\r\n    \"user_id\": \"ea5c8917-285e-4c67-92a1-4b7954dfd305\",\r\n    \"name\": \" 333 Evaluación del tiempo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/surveys/8c0821fd-27c9-4368-8b07-3b980e0b9e93",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"surveys",
+								"8c0821fd-27c9-4368-8b07-3b980e0b9e93"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIxMjc2MDYzLWRhNTktMTFlZS1hNzdiLTk4MjhhNjNiNDdkNiIsImlhdCI6MTcxMDMyNjk0MCwiZXhwIjoxNzEwMzMwNTQwfQ.GsEou2jt61hW7Fb0fVQ_TdPzEgZtv1vyWXKhWhsMpEE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"se mide en desempeño\",\r\n    \"deadline\": \"2024-03-15T00:00:00Z\",\r\n    \"user_id\": \"ea5c8917-285e-4c67-92a1-4b7954dfd305\",\r\n    \"name\": \"Evaluación del tiempo 3333\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/surveys",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"surveys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/surveys/189bce3e-b913-4791-a196-a8f1cb54c2a7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"surveys",
+								"189bce3e-b913-4791-a196-a8f1cb54c2a7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteLogic",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/surveys/active/6b45cd86-da62-4188-9125-8995bb2377c0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"surveys",
+								"active",
+								"6b45cd86-da62-4188-9125-8995bb2377c0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users_surveys",
+			"item": [
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users_surveys",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users_surveys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users_surveys/filterbyid?surveyid=3d9736f5-bde9-41b2-b128-f0e836012ef1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users_surveys",
+								"filterbyid"
+							],
+							"query": [
+								{
+									"key": "userid",
+									"value": "ea5c8917-285e-4c67-92a1-4b7954dfd305",
+									"disabled": true
+								},
+								{
+									"key": "surveyid",
+									"value": "3d9736f5-bde9-41b2-b128-f0e836012ef1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"ea5c8917-285e-4c67-92a1-4b7954dfd305\",\r\n    \"survey_id\": \"6b45cd86-da62-4188-9125-8995bb2377c0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users_surveys",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users_surveys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIxMjc2MDYzLWRhNTktMTFlZS1hNzdiLTk4MjhhNjNiNDdkNiIsImlhdCI6MTcxMDMyNjk0MCwiZXhwIjoxNzEwMzMwNTQwfQ.GsEou2jt61hW7Fb0fVQ_TdPzEgZtv1vyWXKhWhsMpEE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"ea5c8917-285e-4c67-92a1-4b7954dfd305\",\r\n    \"survey_id\": \"6b45cd86-da62-4188-9125-8995bb2377c0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users_surveys",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users_surveys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/surveys/189bce3e-b913-4791-a196-a8f1cb54c2a7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"surveys",
+								"189bce3e-b913-4791-a196-a8f1cb54c2a7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteLogic",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users_surveys/active?surveyid=3d9736f5-bde9-41b2-b128-f0e836012ef1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users_surveys",
+								"active"
+							],
+							"query": [
+								{
+									"key": "userid",
+									"value": "ea5c8917-285e-4c67-92a1-4b7954dfd305",
+									"disabled": true
+								},
+								{
+									"key": "surveyid",
+									"value": "3d9736f5-bde9-41b2-b128-f0e836012ef1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "departments",
+			"item": [
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/departments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIxMjc2MDYzLWRhNTktMTFlZS1hNzdiLTk4MjhhNjNiNDdkNiIsImlhdCI6MTcwOTU4MjA0NiwiZXhwIjoxNzA5NTg1NjQ2fQ.kyBvrPQ4tajXoHQq-rIy9JqdthjI-moY9zVpNjXllPE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/departments/3fe58193-611c-4461-8ed3-ecf6a92b59b7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"departments",
+								"3fe58193-611c-4461-8ed3-ecf6a92b59b7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"tapa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/departments/3fe58193-611c-4461-8ed3-ecf6a92b59b7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"departments",
+								"3fe58193-611c-4461-8ed3-ecf6a92b59b7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"bird\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/departments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/departments/2f2bf820-5ce7-4448-8a0d-b1bcd5ebe72c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"departments",
+								"2f2bf820-5ce7-4448-8a0d-b1bcd5ebe72c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteLogic",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/departments/active/315ed85a-f7ba-4480-a107-90c0ae53789f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"departments",
+								"active",
+								"315ed85a-f7ba-4480-a107-90c0ae53789f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "areas",
+			"item": [
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/areas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"areas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIxMjc2MDYzLWRhNTktMTFlZS1hNzdiLTk4MjhhNjNiNDdkNiIsImlhdCI6MTcwOTU4MjA0NiwiZXhwIjoxNzA5NTg1NjQ2fQ.kyBvrPQ4tajXoHQq-rIy9JqdthjI-moY9zVpNjXllPE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/areas/c0119543-85c4-4aae-96db-9434725b5643",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"areas",
+								"c0119543-85c4-4aae-96db-9434725b5643"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Gestión del tiempo\",\r\n    \"description\": \"Se evalua todo lo relacionado de la Gestión del tiempo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/areas/c0119543-85c4-4aae-96db-9434725b5643",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"areas",
+								"c0119543-85c4-4aae-96db-9434725b5643"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"ACTITUD\",\r\n    \"description\": \"Se evalua todo lo relacionado con la ACTITUD\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/areas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"areas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/areas/c0119543-85c4-4aae-96db-9434725b5643",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"areas",
+								"c0119543-85c4-4aae-96db-9434725b5643"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteLogic",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/areas/active/128be53f-6e15-4e4e-8959-792bf0619079",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"areas",
+								"active",
+								"128be53f-6e15-4e4e-8959-792bf0619079"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "types_answers",
+			"item": [
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/types_answers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"types_answers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIxMjc2MDYzLWRhNTktMTFlZS1hNzdiLTk4MjhhNjNiNDdkNiIsImlhdCI6MTcwOTU4MjA0NiwiZXhwIjoxNzA5NTg1NjQ2fQ.kyBvrPQ4tajXoHQq-rIy9JqdthjI-moY9zVpNjXllPE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/types_answers/3c7dba60-78ff-4500-8d08-5f1daa640307",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"types_answers",
+								"3c7dba60-78ff-4500-8d08-5f1daa640307"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"Numerico ppp\",\r\n    \"description\": \"Cada respuesta tiene un puntaje\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/types_answers/d69e0c3b-4917-433a-9658-cf8227619062",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"types_answers",
+								"d69e0c3b-4917-433a-9658-cf8227619062"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"Numerico\",\r\n    \"description\": \"Cada respuesta tiene un puntaje\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/types_answers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"types_answers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/types_answers/d69e0c3b-4917-433a-9658-cf8227619062",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"types_answers",
+								"d69e0c3b-4917-433a-9658-cf8227619062"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteLogic",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/types_answers/active/0648c980-553d-41a7-8502-a0ec440eefc5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"types_answers",
+								"active",
+								"0648c980-553d-41a7-8502-a0ec440eefc5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login Evaluator",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"hannah\",\r\n    \"password\": 12345\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"wisman@hotmail.com\",\r\n    \"password\": 123\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
