@@ -22,13 +22,15 @@ model areas {
   id          String      @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
   name        String      @db.VarChar(100)
   description String      @db.VarChar(500)
+  active      Boolean?    @default(true)
   questions   questions[]
 }
 
 model departments {
-  id    String  @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
-  name  String  @db.VarChar(100)
-  users users[]
+  id     String   @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  name   String   @db.VarChar(100)
+  active Boolean? @default(true)
+  users  users[]
 }
 
 model questions {
@@ -51,33 +53,47 @@ model results {
 }
 
 model surveys {
-  id          String      @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
-  description String      @db.VarChar(500)
-  create_date DateTime?   @default(now()) @db.Timestamp(6)
-  deadline    DateTime?   @db.Timestamp(6)
-  active      Boolean
-  user_id     String      @db.Uuid
-  questions   questions[]
-  results     results[]
-  users       users       @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  id            String          @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  description   String          @db.VarChar(500)
+  create_date   DateTime?       @default(now()) @db.Timestamp(6)
+  deadline      DateTime?       @db.Timestamp(6)
+  active        Boolean         @default(true)
+  user_id       String          @db.Uuid
+  name          String?         @db.VarChar(200)
+  questions     questions[]
+  results       results[]
+  users         users           @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  users_surveys users_surveys[]
 }
 
 model types_answers {
   id          String    @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
   type        String    @db.VarChar(100)
   description String    @db.VarChar(500)
+  active      Boolean?  @default(true)
   answers     answers[]
 }
 
 model users {
-  id            String      @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
-  email         String      @unique @db.VarChar(100)
-  password      String      @db.VarChar(200)
-  name          String      @db.VarChar(200)
-  job_title     String      @db.VarChar(100)
+  id            String          @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  email         String          @unique @db.VarChar(100)
+  password      String          @db.VarChar(200)
+  name          String          @db.VarChar(200)
+  job_title     String          @db.VarChar(100)
   role          Boolean
-  active        Boolean
-  department_id String      @db.Uuid
+  active        Boolean         @default(true)
+  department_id String          @db.Uuid
   surveys       surveys[]
-  departments   departments @relation(fields: [department_id], references: [id], onDelete: Cascade)
+  departments   departments     @relation(fields: [department_id], references: [id], onDelete: Cascade)
+  users_surveys users_surveys[]
+}
+
+model users_surveys {
+  active    Boolean @default(true)
+  user_id   String  @db.Uuid
+  survey_id String  @db.Uuid
+  surveys   surveys @relation(fields: [survey_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  users     users   @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([user_id, survey_id])
 }

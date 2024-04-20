@@ -78,6 +78,20 @@ const DepartmentsController = {
             res.status(500).json({ message: 'There was an error deleting the department: ' + error });
         }
     },
+
+    // Función para ELIMINAR LOGICO un departamento
+    deleteLogicDepartment: async (req: Request, res: Response) => {
+        try {
+            const id = req.params.id;
+            await DepartmentsModel.deleteLogicDepartment(id);
+            res.status(200).json({ message: 'Survey deleted logic successfully!' });
+            return;
+
+        } catch (error) {
+            console.log(error);
+            res.status(500).json({ message: 'An error occurred: ' + error });
+        }
+    }
 };
 
 export default DepartmentsController;

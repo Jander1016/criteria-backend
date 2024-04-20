@@ -42,6 +42,17 @@ const DepartmentsModel = {
         });
         return result;
     },
+
+    //ELIMINADOR LOGICO departamento
+    deleteLogicDepartment:  async (id: string) => {
+        const result = connectionPrisma.departments.update({
+            where: { id: id },
+            data: {
+                active: false // Cambiar el valor de active a false
+            }
+        });
+        return result;
+    },
 };
 
 export default DepartmentsModel;
