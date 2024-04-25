@@ -7,6 +7,9 @@ import AreasRouter from "./routes/AreasRouter";
 import TypesAnswersRouter from "./routes/TypesAnswersRouter";
 import SurveysRouter from "./routes/SurveysRouter";
 import UsersSurveysRouter from "./routes/UsersSurveysRouter";
+import AnswersRouter from "./routes/AnswersRouter";
+import QuestionsRouter from "./routes/QuestionsRouter";
+import ResultsRouter from "./routes/ResultsRouter";
 
 config();
 
@@ -42,7 +45,15 @@ router.use("/surveys/", SurveysRouter);
 
 router.use("/users_surveys/", UsersSurveysRouter);
 
+router.use("/answers/", AnswersRouter);
+
+router.use("/questions/", QuestionsRouter);
+
+router.use("/results/", ResultsRouter);
+
 app.use(API_URL || '', router);
+
+
 
 // *******  *********
 
