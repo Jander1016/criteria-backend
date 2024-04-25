@@ -1,4 +1,4 @@
-# ![Crit 360 - Backend]
+Crit 360 - Backend
 
 Este proyecto de se desarrolla para realizar encuestas que evalúan diferentes aspectos de los empleados de una empresa. Este repositorio constituye el backend de la aplicación, el cual está conectado con un frontend alojado en el siguiente repositorio: https://github.com/Jander1016/criteria-frontend
 
