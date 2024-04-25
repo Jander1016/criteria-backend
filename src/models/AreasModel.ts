@@ -47,9 +47,7 @@ const AreasModel = {
     deleteLogicArea:  async (id: string) => {
         const result = connectionPrisma.areas.update({
             where: { id: id },
-            data: {
-                active: false // Cambiar el valor de active a false
-            }
+            data: { active : false }// Cambiar el valor de active a false
         });
         return result;
     },
