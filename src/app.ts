@@ -53,7 +53,6 @@ router.use("/results/", ResultsRouter);
 
 app.use(API_URL || '', router);
 
-console.log(API_URL)
 
 
 
